@@ -1,4 +1,6 @@
-def convert_to_uppercase():
+# phyton code for assessment
+def convert_to_uppercase()
+    # prompt user for filename
     filename = input("Please enter the name of the file: ")
     try:
         with open(filename, 'r') as file:
