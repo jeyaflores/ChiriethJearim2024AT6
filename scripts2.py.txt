@@ -1,0 +1,28 @@
+def convert_file_to_uppercase():
+    # Ask the user for the file name
+    filename = input("Please enter the name of the file: ")
+    
+    try:
+        # Open the file to read its contents
+        with open(filename, 'r') as file:
+            content = file.read()
+        
+        # Convert the content to uppercase
+        uppercase_content = content.upper()
+        
+        # Open the file again, then overwrite with uppercase content
+        with open(filename, 'w') as file:
+            file.write(uppercase_content)
+        
+        print("The file has been converted to uppercase.")
+    
+    except FileNotFoundError:
+        # Error handling if the file do not exist
+        print(f"The file {filename} was not found.")
+   
+    except Exception as e:
+        # General error handling for any other exceptions
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    convert_file_to_uppercase()
